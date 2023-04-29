@@ -20,7 +20,7 @@ int main()
             int wordLength = (i == str.size() - 1) ? i - start + 1 : i - start;
             string word = str.substr(start, wordLength);
             words.push_back(word);
-            start = i + 1; // update the start position for the next word
+            start = i + 1; 
         }
     }
     vector<float> size_words;
