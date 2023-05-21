@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        body {
+            font-family: Georgia, 'Times New Roman', Times, serif, serif;
+            background-color: #f2f2f2;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            background-color: #fff;
+            padding: 20px;
+            text-align: center;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .output {
+            font-family: Georgia, 'Times New Roman', Times, serif, serif;
+            font-size: 16px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Bionic Text Converter</h2>
+        <label for="input">Enter sentence:</label>
+        <input type="text" id="input">
+        <button onclick="formatText()">Format</button>
+        <div class="output" id="output"></div>
+    </div>
+
+    <script>
+        function formatText() {
+            var input = document.getElementById("input").value;
+            var words = input.split(" ");
+            var output = "";
+
+            for (var i = 0; i < words.length; i++) {
+                var word = words[i];
+                var halfLength = Math.floor(word.length / 2);
+                var firstHalf = word.substr(0, halfLength);
+                var secondHalf = word.substr(halfLength);
+                output += "<span style='font-weight: bold;'>" + firstHalf + "</span>" + secondHalf + " ";
+            }
+
+            document.getElementById("output").innerHTML = output;
+        }
+    </script>
+</body>
+</html>
